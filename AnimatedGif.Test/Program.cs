@@ -11,13 +11,18 @@ namespace AnimatedGif.Test
 
         static void Main(string[] args)
         {
-            for (int i = 0; i < 110; i += 2)
-            {
-                WriteGif(i);
-                int t = TestTimings();
-                Console.WriteLine($"{i}: {t}");
-            }
+            Test(11);
+            Test(150);
+            for (int i = 6; i < 110; i += 2)
+                Test(i);
             Console.ReadLine();
+        }
+
+        public static void Test(int i)
+        {
+            WriteGif(i);
+            int t = TestTimings();
+            Console.WriteLine($"{i}: {t}");
         }
 
         public static void WriteGif(int delay)
